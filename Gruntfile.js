@@ -15,6 +15,8 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  grunt.loadNpmTasks('grunt-contrib-sass');
+
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
@@ -26,6 +28,15 @@ module.exports = function (grunt) {
 
     // Project settings
     config: appConfig,
+
+    sass: {
+      dist: {
+        files: {
+          '<%= config.app %>/styles/main.css' : '<%= config.app %>/sass/main.scss'
+        },
+        trace: true
+      }
+    },
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
@@ -43,9 +54,9 @@ module.exports = function (grunt) {
         files: ['test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
-      styles: {
-        files: ['<%= config.app %>/styles/{,*/}*.css', 'less/*.less'],
-        tasks: ['less', 'newer:copy:styles']
+      css: {
+        files: '**/*.scss',
+        tasks: ['sass', 'clean:server']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -201,17 +212,8 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
-    },
-
-    // less settings
-    less: {
-      development: {        
-        files: {
-          // target.css file: source.less file
-          '<%= config.app %>/styles/main.css': 'less/main.less'
-        }
-      }
     }
+
   });
 
 
@@ -224,7 +226,8 @@ module.exports = function (grunt) {
       'clean:server',
       'concurrent:server',
       'connect:livereload',
-      'watch'
+      'watch',
+      'sass'
     ]);
   });
 
