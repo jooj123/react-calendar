@@ -22,8 +22,8 @@ You will need to have a div in your html:
 ```
 
 The data passed to the component is compromised of an array of objects, each have the properties:
-* start: this is the start time minutes since 9am
-* end: this is the end time minutes since 9am
+* **start**: this is the start time minutes since 9am
+* **end**: this is the end time minutes since 9am
 
 
 ## Run example
