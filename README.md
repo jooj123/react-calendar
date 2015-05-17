@@ -1,10 +1,12 @@
 # React Calendar
-React Calendar is a library for displaying a calendar and events
+React Calendar is a library for displaying a calendar and events that overlay.
+Its designed so that no events will visually overlap
 
 You can display a calendar like below:
 
 ```
-var ReactCalendar = require('react-calendar')
+var Calendar = require('react-calendar');
+var React = require('react');
 
 var data = [ {start: 30, end: 150}, {start: 540, end: 600}, 
              {start: 560, end: 620}, {start: 610, end: 670} ];
@@ -13,7 +15,6 @@ React.render(
     <Calendar data={data}/>,
     document.getElementById('day-wrapper')
 );
-
 ```
 
 You will need to have a div in your html:
