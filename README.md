@@ -6,7 +6,8 @@ You can display a calendar like below:
 ```
 var ReactCalendar = require('react-calendar')
 
-var data = [ {start: 30, end: 150}, {start: 540, end: 600}, {start: 560, end: 620}, {start: 610, end: 670} ];
+var data = [ {start: 30, end: 150}, {start: 540, end: 600}, 
+             {start: 560, end: 620}, {start: 610, end: 670} ];
 
 React.render(
     <Calendar data={data}/>,
