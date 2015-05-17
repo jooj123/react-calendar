@@ -27,7 +27,17 @@ The data passed to the component is compromised of an array of objects, each hav
 
 
 ## Run example
+```
+npm install
+grunt serve
+```
 
+## Contribute
+Please feel free to submit a Pull Request, I would love for you to contribute to **React Calendar**
 
-WORK IN PROGRESS
 ## TODO
+1. Will need to publish as node.js module
+2. Tests need to be implemented
+3. Functionality for varying times in a day
+4. Functionality for multiple day views (currently only supports the view of 1 day)
+5. Functionality for events such as onClick, onMouseOver etc on the calendar events
