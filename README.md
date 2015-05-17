@@ -32,6 +32,7 @@ The data passed to the component is compromised of an array of objects, each hav
 
 ## Run example
 ```
+git clone https://github.com/jooj123/react-calendar.git
 npm install
 grunt serve
 ```
