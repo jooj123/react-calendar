@@ -23,7 +23,7 @@ You will need to have a div in your html:
 <div id="day-wrapper"></div>
 ```
 
-[Click here](https://raw.githubusercontent.com/jooj123/react-calendar/master/examples/calendar.png) to see the generated calendar
+[**Click here**](https://raw.githubusercontent.com/jooj123/react-calendar/master/examples/calendar.png) to see the generated calendar
 
 The data passed to the component is compromised of an array of objects, each have the properties:
 * **start**: this is the start time minutes since 9am
