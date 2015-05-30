@@ -34,6 +34,9 @@ var CalendarTimes = React.createClass({
 
 var CalendarEvent = React.createClass({
 
+    propTypes: {
+        event: React.PropTypes.object.isRequired
+    },
     render: function() {
         var divStyle = {
             top: this.props.event.start + 'px',
@@ -45,8 +48,8 @@ var CalendarEvent = React.createClass({
         return (
             <div className="event" style={divStyle}>
                 <dl>
-                    <dt>Sample Item</dt>
-                    <dd>Sample Location</dd>
+                    <dt>{this.props.event.title}</dt>
+                    <dd>{this.props.event.location}</dd>
                 </dl>
             </div>
         );
@@ -55,6 +58,9 @@ var CalendarEvent = React.createClass({
 
 var CalendarEventList = React.createClass({
 
+    propTypes: {
+        events: React.PropTypes.array.isRequired
+    },
     render: function() {
         var calendarEvents = this.props.events.map(function (event, key) {
             return (
@@ -71,9 +77,12 @@ var CalendarEventList = React.createClass({
 
 var CalendarEvents = React.createClass({
 
+    propTypes: {
+        events: React.PropTypes.array.isRequired
+    },
     generateCalendarEvents: function() {
 
-        var events = this.props.data;
+        var events = this.props.events;
         var eventsNode = this.getDOMNode();
 
         // calculate the width of the target (for reuse)
@@ -173,20 +182,26 @@ var CalendarEvents = React.createClass({
 });
 
 var Calendar = React.createClass({
+    propTypes: {
+        events: React.PropTypes.array.isRequired
+    },
     render: function() {
         return (
             <div>
                 <CalendarTimes />
-                <CalendarEvents data={this.props.data}/>
+                <CalendarEvents events={this.props.events}/>
             </div>
         );
     }
 });
 
 
-var data = [ {start: 30, end: 150}, {start: 540, end: 600}, {start: 560, end: 620}, {start: 610, end: 670} ];
+var events = [  {start: 30, end: 150, title: 'Breakfast with Sarah', location: 'Test123'}, 
+                {start: 540, end: 600, title: 'Meeting with John', location: 'Sample Text'}, 
+                {start: 560, end: 620, title: 'React Meetup', location: 'Placeholder text'}, 
+                {start: 610, end: 670, title: 'Assignment Due', location: 'Something ABC'} ];
 
 React.render(
-    <Calendar data={data}/>,
+    <Calendar events={events}/>,
     document.getElementById('day-wrapper')
 );
