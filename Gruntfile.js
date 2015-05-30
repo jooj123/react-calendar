@@ -44,7 +44,7 @@ module.exports = function (grunt) {
         files: ['bower.json']
       },
       js: {
-        files: ['<%= config.app %>/scripts/{,*/}*.js'],
+        files: ['<%= config.app %>/scripts/{,*/}*.js', '<%= config.app %>/jsx/{,*/}*.jsx'],
         tasks: ['newer:jshint:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
