@@ -1,39 +1,45 @@
 {
-  "name": "react-calendar",
-  "version": "0.0.1",
-  "dependencies": {},
-  "devDependencies": {
-    "connect-modrewrite": "^0.7.11",
-    "grunt": "^0.4.5",
-    "grunt-concurrent": "^0.5.0",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-concat": "^0.4.0",
-    "grunt-contrib-connect": "^0.7.1",
-    "grunt-contrib-copy": "^0.5.0",
-    "grunt-contrib-cssmin": "^0.9.0",
-    "grunt-contrib-htmlmin": "^0.3.0",
-    "grunt-contrib-imagemin": "^0.7.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-sass": "^0.9.2",
-    "grunt-contrib-uglify": "^0.4.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-filerev": "^0.2.1",
-    "grunt-karma": "^0.8.3",
-    "grunt-newer": "^0.7.0",
-    "grunt-ngmin": "^0.0.3",
-    "grunt-svgmin": "^0.4.0",
-    "grunt-usemin": "^2.1.1",
-    "jshint-stylish": "^0.2.0",
-    "karma": "^0.12.17",
-    "karma-jasmine": "^0.1.5",
-    "karma-phantomjs-launcher": "^0.1.4",
-    "load-grunt-tasks": "^0.4.0",
-    "time-grunt": "^0.3.1"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
+  "name": "reactcalendar",
+  "version": "0.0.7",
+  "description": "Calendar Library built with React",
+  "main": "./lib",
   "scripts": {
-    "test": "grunt test"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "rm -rf lib",
+    "jshint": "./node_modules/.bin/jsxhint --harmony 'src/**' --exclude src/utils/modernizr.custom.js",
+    "build": "npm run jshint && ./node_modules/.bin/babel --stage 1 ./src --out-dir ./lib",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jooj123/react-calendar.git"
+  },
+  "keywords": [
+    "calendar",
+    "react",
+    "library",
+    "module",
+    "events"
+  ],
+  "author": "Martin Jujou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jooj123/react-calendar/issues"
+  },
+  "homepage": "https://github.com/jooj123/react-calendar",
+  "dependencies": {
+    "classnames": "^1.2.0",
+    "react-draggable2": "^0.5.1"
+  },
+  "peerDependencies": {
+    "react": ">=0.13",
+    "react-tap-event-plugin": ">=0.1.3"
+  },
+  "devDependencies": {
+    "babel": "^5.4.3",
+    "jsxhint": "^0.15.0",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3",
+    "react-tap-event-plugin": "^0.1.6"
   }
 }

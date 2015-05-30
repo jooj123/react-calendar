@@ -5,44 +5,54 @@ Its designed so that no events will visually overlap
 You can display a calendar like below:
 
 ```
-var Calendar = require('react-calendar');
-var React = require('react');
+var React = require("react"),
+    Calendar = require("reactcalendar");
 
-var data = [ {start: 30, end: 150}, {start: 540, end: 600}, 
-             {start: 560, end: 620}, {start: 610, end: 670} ];
+var events = [  {start: 30, end: 150, title: "Breakfast with Sarah", location: "Test123"}, 
+                {start: 540, end: 600, title: "Meeting with John", location: "Sample Text"}, 
+                {start: 560, end: 620, title: "React Meetup", location: "Placeholder text"}, 
+                {start: 610, end: 670, title: "Assignment Due", location: "Something ABC"} ];
 
 React.render(
-    <Calendar data={data}/>,
-    document.getElementById('day-wrapper')
+    <Calendar events={events}/>,
+    document.getElementById("day-wrapper")
 );
 ```
 
-You will need to have a div in your html:
+You will need to have a div in your html (alternatively you can just use document.body):
 
 ```
 <div id="day-wrapper"></div>
 ```
 
-[**Click here**](https://raw.githubusercontent.com/jooj123/react-calendar/master/examples/calendar.png) to see the generated calendar
+[**Click here**](https://raw.githubusercontent.com/jooj123/react-calendar/master/docs/calendar.png) to see the generated calendar
 
 The data passed to the component is compromised of an array of objects, each have the properties:
 * **start**: this is the start time minutes since 9am
 * **end**: this is the end time minutes since 9am
 
 
+## Install
+React calendar is available as an npm package.
+```
+npm install reactcalendar
+```
+Use browserify and reactify for dependency management and JSX transformation.
+
+
 ## Run example
 ```
 git clone https://github.com/jooj123/react-calendar.git
+cd react-calendar/example
 npm install
-grunt serve
+npm start
 ```
 
 ## Contribute
 Please feel free to submit a Pull Request, I would love for you to contribute to **React Calendar**
 
 ## TODO
-1. Will need to publish as node.js module
-2. Tests need to be implemented
-3. Functionality for varying times in a day
-4. Functionality for multiple day views (currently only supports the view of 1 day)
-5. Functionality for events such as onClick, onMouseOver etc on the calendar events
+1. Tests need to be implemented
+2. Functionality for varying times in a day
+3. Functionality for multiple day views (currently only supports the view of 1 day)
+4. Functionality for events such as onClick, onMouseOver etc on the calendar events
