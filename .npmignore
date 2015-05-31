@@ -1,9 +1,7 @@
-node_modules
-dist
-.tmp
-lib
 build
-npm-debug.log
+docs
+examples
+example
 
 # jsx Transform Disk Cache
 .module-cache

@@ -1,7 +1,9 @@
+var React = require("react");
+
 var CalendarTimes = React.createClass({
     render: function() {
         return (
-            <ul className="times">
+            <ul className='times'>
                 <li>9:00<small>AM</small></li>
                 <li>9:30</li>
                 <li>10:00<small>AM</small></li>
@@ -34,27 +36,33 @@ var CalendarTimes = React.createClass({
 
 var CalendarEvent = React.createClass({
 
+    propTypes: {
+        event: React.PropTypes.object.isRequired
+    },
     render: function() {
         var divStyle = {
-            top: this.props.event.start + 'px',
-            left: this.props.event.left + 'px',
-            width: this.props.event.width + 'px', 
-            height: this.props.event.end - this.props.event.start + 'px' 
+            top: this.props.event.start + "px",
+            left: this.props.event.left + "px",
+            width: this.props.event.width + "px", 
+            height: this.props.event.end - this.props.event.start + "px"
         };
 
         return (
-            <div className="event" style={divStyle}>
+            <div className='event' style={divStyle}>
                 <dl>
-                    <dt>Sample Item</dt>
-                    <dd>Sample Location</dd>
+                    <dt>{this.props.event.title}</dt>
+                    <dd>{this.props.event.location}</dd>
                 </dl>
             </div>
         );
     }
-})
+});
 
 var CalendarEventList = React.createClass({
 
+    propTypes: {
+        events: React.PropTypes.array.isRequired
+    },
     render: function() {
         var calendarEvents = this.props.events.map(function (event, key) {
             return (
@@ -62,24 +70,27 @@ var CalendarEventList = React.createClass({
             );
         });
         return (
-            <div className="events-wrapper">
+            <div className='events-wrapper'>
                 {calendarEvents}
             </div>
         );
     }
-})
+});
 
 var CalendarEvents = React.createClass({
 
+    propTypes: {
+        events: React.PropTypes.array.isRequired
+    },
     generateCalendarEvents: function() {
 
-        var events = this.props.data;
+        var events = this.props.events;
         var eventsNode = this.getDOMNode();
 
         // calculate the width of the target (for reuse)
         var style = window.getComputedStyle(eventsNode);
         var targetWidth = eventsNode.offsetWidth - 
-            (parseInt(style.getPropertyValue('padding-left'), 10) + parseInt(style.getPropertyValue('padding-right'), 10) );
+            (parseInt(style.getPropertyValue("padding-left"), 10) + parseInt(style.getPropertyValue("padding-right"), 10) );
 
         var columns = [];
         var lastEventEnding = null;
@@ -173,20 +184,17 @@ var CalendarEvents = React.createClass({
 });
 
 var Calendar = React.createClass({
+    propTypes: {
+        events: React.PropTypes.array.isRequired
+    },
     render: function() {
         return (
             <div>
                 <CalendarTimes />
-                <CalendarEvents data={this.props.data}/>
+                <CalendarEvents events={this.props.events}/>
             </div>
         );
     }
 });
 
-
-var data = [ {start: 30, end: 150}, {start: 540, end: 600}, {start: 560, end: 620}, {start: 610, end: 670} ];
-
-React.render(
-    <Calendar data={data}/>,
-    document.getElementById('day-wrapper')
-);
+module.exports = Calendar;
