@@ -2,8 +2,9 @@ node_modules
 dist
 .tmp
 lib
-build
+build/
 npm-debug.log
+.DS_Store
 
 # jsx Transform Disk Cache
 .module-cache
