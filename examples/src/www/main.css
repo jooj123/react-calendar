@@ -15,7 +15,7 @@ body {
     width: 65px;
     height: 730px;
     list-style-type: none;
-    margin: -18px 10px 0 0;
+    margin: 2px 10px 0 0;
     padding: 0;
     text-align: right;
     color: #a7a7a7;
@@ -42,6 +42,15 @@ body {
     font-size: 8pt;
     color: #a7a7a7;
     font-weight: normal;
+}
+
+/* date wrapper */
+.date-wrapper {
+    text-align: center;
+    color: #686868;
+    font-weight: bold;
+    font-size: 14px;
+    height:20px;
 }
 
 .events-wrapper {

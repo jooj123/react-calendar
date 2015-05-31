@@ -29,6 +29,7 @@
   "homepage": "https://github.com/jooj123/react-calendar",
   "dependencies": {
     "classnames": "^1.2.0",
+    "moment": "^2.10.3",
     "react-draggable2": "^0.5.1"
   },
   "peerDependencies": {
