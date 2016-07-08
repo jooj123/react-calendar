@@ -1,0 +1,33 @@
+.times {
+  float: left;
+  width: 65px;
+  height: 730px;
+  list-style-type: none;
+  margin: -18px 10px 0 0;
+  padding: 0;
+  text-align: right;
+  color: #a7a7a7;
+  font-size: 10pt;
+  position: relative;
+
+  > li {
+    height: 30px;
+    line-height: 30px;
+  }
+
+  > li:nth-child(even) {
+    font-size: 7pt;
+  }
+
+  > li:nth-child(odd) {
+    color: #686868;
+    font-weight: bold;
+  }
+
+  > li:nth-child(odd) > small {
+    margin-left: 5px;
+    font-size: 8pt;
+    color: #a7a7a7;
+    font-weight: normal;
+  }
+}
