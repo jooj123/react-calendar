@@ -1,13 +1,11 @@
 import React from 'react';
 import eventModel from '../../models/eventModel';
+import DayCalendar from '../DayCalendar/DayCalendar';
 
 class Calendar extends React.Component {
   render() {
     return (
-      <div>
-        <CalendarTimes />
-        <CalendarEvents events={this.props.events} />
-      </div>
+      <DayCalendar events={this.props.events} />
     );
   }
 }
