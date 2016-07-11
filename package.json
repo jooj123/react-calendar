@@ -1,6 +1,6 @@
 {
   "name": "reactcalendar",
-  "version": "0.0.7",
+  "version": "1.0.0",
   "description": "Calendar Library build in React",
   "main": "index.js",
   "scripts": {
