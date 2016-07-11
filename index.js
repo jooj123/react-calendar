@@ -1,1 +1,1 @@
-module.exports = require('./lib/calendar.js');
+module.exports = require('./build/calendar.bundle.js');

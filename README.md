@@ -8,9 +8,9 @@ You can display a calendar like below:
 var React = require("react"),
     Calendar = require("reactcalendar");
 
-var events = [  {start: 30, end: 150, title: "Breakfast with Sarah", location: "Test123"}, 
-                {start: 540, end: 600, title: "Meeting with John", location: "Sample Text"}, 
-                {start: 560, end: 620, title: "React Meetup", location: "Placeholder text"}, 
+var events = [  {start: 30, end: 150, title: "Breakfast with Sarah", location: "Test123"},
+                {start: 540, end: 600, title: "Meeting with John", location: "Sample Text"},
+                {start: 560, end: 620, title: "React Meetup", location: "Placeholder text"},
                 {start: 610, end: 670, title: "Assignment Due", location: "Something ABC"} ];
 
 React.render(
@@ -37,18 +37,17 @@ React calendar is available as an npm package.
 ```
 npm install reactcalendar
 ```
-Use browserify and reactify for dependency management and JSX transformation.
 
 
 ## Run example
 ```
 git clone https://github.com/jooj123/react-calendar.git
-cd react-calendar/example
 npm install
 npm start
 ```
 
 ## Contribute
+This plugin is very much in its early form.
 Please feel free to submit a Pull Request, I would love for you to contribute to **React Calendar**
 
 ## TODO
