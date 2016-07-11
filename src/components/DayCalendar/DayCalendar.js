@@ -1,7 +1,7 @@
 import React from 'react';
 import DayOfTheWeek from '../DayOfTheWeek/DayOfTheWeek';
 import EventList from '../EventList/EventList';
-import eventModel from '../../models/eventModel';
+import { EventModel } from '../../models/EventModel';
 
 class DayCalendar extends React.Component {
   render() {
@@ -15,7 +15,7 @@ class DayCalendar extends React.Component {
 }
 
 DayCalendar.propTypes = {
-  events: React.PropTypes.arrayOf(eventModel)
+  events: React.PropTypes.arrayOf(React.PropTypes.shape(EventModel))
 };
 
 export default DayCalendar;

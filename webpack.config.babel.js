@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+import CommonsChunkPlugin from 'webpack/lib/optimize/CommonsChunkPlugin';
 
 const AUTOPREFIXER_BROWSERS = [
   'Android 2.3',
@@ -24,12 +25,13 @@ console.log('DEBUG: ', DEBUG);
 module.exports = {
   context: `${__dirname}/src`,
   entry: {
-    javascript: './index.js',
-    html: './index.html'
+    commons: './entry.js',
+    example: './example.js'
   },
   output: {
     path: `${__dirname}/build`,
-    filename: 'bundle.js'
+    filename: '[name].bundle.js',
+    chunkFilename: '[id].chunk.js'
   },
   // Choose a developer tool to enhance debugging
   // http://webpack.github.io/docs/configuration.html#devtool
@@ -55,6 +57,7 @@ module.exports = {
   },
 
   plugins: [
+    new CommonsChunkPlugin('commons', 'calendar.bundle.js'),
     new webpack.DefinePlugin(GLOBALS),
     ...(!DEBUG ? [
       new webpack.optimize.DedupePlugin(),

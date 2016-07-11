@@ -1,5 +1,5 @@
 import React from 'react';
-import eventModel from '../../models/eventModel';
+import { EventModel } from '../../models/EventModel';
 import DayCalendar from '../DayCalendar/DayCalendar';
 
 class Calendar extends React.Component {
@@ -11,7 +11,7 @@ class Calendar extends React.Component {
 }
 
 Calendar.propTypes = {
-  events: React.PropTypes.arrayOf(eventModel)
+  events: React.PropTypes.arrayOf(React.PropTypes.shape(EventModel))
 };
 
 export default Calendar;

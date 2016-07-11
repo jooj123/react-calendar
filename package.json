@@ -4,9 +4,10 @@
   "description": "Calendar Library build in React",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --watch --inline --hot --open --content-base build",
+    "start": "webpack-dev-server --progress --watch --inline --hot --open --content-base src",
     "build": "webpack --progress",
-    "build:prod": "NODE_ENV=production npm run build"
+    "build:prod": "NODE_ENV=production npm run build",
+    "postinstall": "npm run build:prod"
   },
   "repository": {
     "type": "git",

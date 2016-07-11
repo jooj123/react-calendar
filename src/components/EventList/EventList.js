@@ -1,4 +1,7 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import { EventModel } from '../../models/EventModel';
+import Event from '../Event/Event';
 
 class EventList extends React.Component {
   constructor() {
@@ -14,7 +17,7 @@ class EventList extends React.Component {
 
   generateCalendarEvents() {
     const events = this.props.events;
-    const eventsNode = this.getDOMNode();
+    const eventsNode = ReactDOM.findDOMNode(this);
 
     // calculate the width of the target (for reuse)
     const style = window.getComputedStyle(eventsNode);
@@ -115,7 +118,7 @@ class EventList extends React.Component {
 }
 
 EventList.propTypes = {
-  events: React.PropTypes.array.isRequired
+  events: React.PropTypes.arrayOf(React.PropTypes.shape(EventModel)).isRequired
 };
 
 export default EventList;
